@@ -469,7 +469,8 @@ window.select_mission_answer = function(soln) {
         qd.innerHTML = &#39;Well done! You have appeased the restless spirit child.&#39;;
 		state.variables.xp += state.variables.experience;
 		if(state.variables.shame &gt; 0) {
-		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;
+		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;;
+		  state.variables.shame -= 1;
 		} else {
 		  qd.innerHTML += &#39; The elder gratefully presses &#39; + state.variables.reward + &#39; &#39; + state.variables.denomination + &#39; coins into your hand.&#39;;
 		  state.variables.my_wealth += state.variables.reward_value;
@@ -594,7 +595,8 @@ window.select_mission_answer = function(soln) {
         qd.innerHTML = &#39;Well done! You have appeased the restless ancestor.&#39;;
 		state.variables.xp += state.variables.experience;
 		if(state.variables.shame &gt; 0) {
-		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;
+		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;;
+		  state.variables.shame -= 1;
 		} else {
 		  qd.innerHTML += &#39; The young woman gratefully presses &#39; + state.variables.reward + &#39; &#39; + state.variables.denomination + &#39; coins into your hand.&#39;;
 		  state.variables.my_wealth += state.variables.reward_value;
@@ -837,7 +839,8 @@ window.select_mission_answer = function(soln) {
         qd.innerHTML = &#39;Well done! You have appeased the restless snake spirit.&#39;;
 		state.variables.xp += state.variables.experience;
 		if(state.variables.shame &gt; 0) {
-		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;
+		  qd.innerHTML += &#39; You have redeemed yourself somewhat. You stand a little straighter and breathe a little easier.&#39;;
+		  state.variables.shame -= 1;
 		} else {
 		  qd.innerHTML += &#39; The young man gratefully presses &#39; + state.variables.reward + &#39; &#39; + state.variables.denomination + &#39; coins into your hand.&#39;;
 		  state.variables.my_wealth += state.variables.reward_value;
