@@ -192,9 +192,9 @@ Welcome back to the Academy.
 
 You trudge back to your dormitory with a weary sigh and fall into your bed. You wake up feeling refreshed.
 &lt;&lt;set $hp = $max_hp&gt;&gt;
-You have $hp health, $my_wealth wealth, and $xp experience.
+You have $hp health, $my_wealth wealth, $xp experience, and $shame shame.
 
-[[Back to the grind.|Enter the Academy]]</tw-passagedata><tw-passagedata pid="4" name="Review Runes" tags="" position="200,500" size="100,100">Here are the runes you have already learned. Which would you like to review?
+[[Back to the grind.|Enter the Academy]]</tw-passagedata><tw-passagedata pid="4" name="Review Runes" tags="" position="203,499" size="100,100">Here are the runes you have already learned. Which would you like to review?
 
 &lt;&lt;script&gt;&gt;
 window.do_room_thing = function(link) {
@@ -215,7 +215,7 @@ window.do_room_thing = function(link) {
     width: 150,
     height: 150,
     showCharacter: false,
-    showOutline: false,
+    showOutline: true,
     showHintAfterMisses: 3,
     highlightOnComplete: true,
     padding: 5
@@ -379,7 +379,7 @@ window.select_mission = function(misn) {
 		parent.removeChild(parent.lastChild);
 	};
 	const pg = document.createElement(&quot;p&quot;);
-	pg.innerHTML = &#39;You select a scroll and give the others back to the magister. The official barely even glances up at you. &quot;Good luck,&quot; they mumble as they flip through their work. &#39; + misn.name;
+	pg.innerHTML = &#39;You select a scroll and give the others back to the magister. The official barely even glances up at you. &quot;Good luck,&quot; they mumble as they flip through their work.&#39;;
 	parent.appendChild(pg);
 	State.variables.current_mission = misn.name;
 	const ona = document.createElement(&quot;a&quot;);
@@ -709,7 +709,7 @@ You wake up in the Academy infirmary. The nurse gives you a bland look and says,
 					{hanzi: &#39;弋&#39;, pinyin: &#39;yì&#39;, strokes: 3, defn: &#39;arrow with string for retrieval; to shoot such an arrow; &#39;},
 					{hanzi: &#39;上&#39;, pinyin: &#39;shàng&#39;, strokes: 3, defn: &#39;up&#39;},
 					{hanzi: &#39;小&#39;, pinyin: &#39;xiǎo&#39;, strokes: 3, defn: &#39;small&#39;},
-					{hanzi: &#39;口&#39;, pinyin: &#39;kǒu&#39;, strokes: 3, defn: &#39;mouth&#39;},
+					{hanzi: &#39;口&#39;, pinyin: &#39;kǒu&#39;, strokes: 3, defn: &#39;mouth; measure word for households, families&#39;},
 					{hanzi: &#39;山&#39;, pinyin: &#39;shān&#39;, strokes: 3, defn: &#39;mountain&#39;},
 					{hanzi: &#39;巾&#39;, pinyin: &#39;jīn&#39;, strokes: 3, defn: &#39;towel; piece of cloth, kerchief&#39;},
 					{hanzi: &#39;千&#39;, pinyin: &#39;qiān&#39;, strokes: 3, defn: &#39;1000; many&#39;},
@@ -750,16 +750,7 @@ You wake up in the Academy infirmary. The nurse gives you a bland look and says,
 					{hanzi: &#39;幺&#39;, pinyin: &#39;yāo&#39;, strokes: 3, defn: &#39;youngest (among siblings); tiny, small; one (spoken only)&#39;},
 				   ]&gt;&gt;
 
-&lt;&lt;set $learned_hanzi = [{hanzi: &#39;一&#39;, pinyin: &#39;yī&#39;, strokes: 1,
-                     defn: &#39;one&#39;},
-                    {hanzi: &#39;二&#39;, pinyin: &#39;èr&#39;, strokes: 2,
-					 defn: &#39;two&#39;},
-                    {hanzi: &#39;三&#39;, pinyin: &#39;sān&#39;, strokes: 3,
-					 defn: &#39;three&#39;},
-                    {hanzi: &#39;四&#39;, pinyin: &#39;sì&#39;, strokes: 5,
-					 defn: &#39;four&#39;},
-					{hanzi: &#39;五&#39;, pinyin: &#39;wǔ&#39;, strokes: 4,
-					 defn: &#39;five&#39;},]&gt;&gt;
+&lt;&lt;set $learned_hanzi = []&gt;&gt;
 &lt;&lt;set $learned_hanzi_only = []&gt;&gt;
 
 &lt;&lt;set $basic_numbers = [&#39;一&#39;, &#39;二&#39;, &#39;三&#39;, &#39;四&#39;, &#39;五&#39;, 
