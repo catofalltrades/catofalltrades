@@ -202,6 +202,11 @@ window.do_room_thing = function(link) {
   console.log(parent);
   deleteChildren(parent);
   
+  const ppre = document.createElement(&quot;p&quot;);
+  ppre.setAttribute(&quot;id&quot;, &quot;ppre&quot;);
+  parent.appendChild(ppre);
+  ppre.innerHTML = &#39;Please write &#39; + link.pinyin + &#39;:&#39;;
+  
   const el = document.createElement(&quot;div&quot;);
   el.setAttribute(&quot;id&quot;, &quot;review_hanzi&quot;);
   el.setAttribute(&quot;class&quot;, &quot;hanzi&quot;);
