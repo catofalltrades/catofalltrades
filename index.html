@@ -431,10 +431,11 @@ $(&#39;&lt;a&gt;Accept&lt;/a&gt;&lt;br /&gt;&#39;).ariaClick(function (event) {
 &lt;&lt;set $verb = randomSelect($verbs)&gt;&gt;
 &lt;&lt;set $num1 = randomInt(5) + 6&gt;&gt;
 &lt;&lt;set $num2 = randomInt(5) + 1&gt;&gt;
-&lt;&lt;set $num1hanzi = $basic_numbers[$num1 - 1] + &#39;个&#39;&gt;&gt;
-&lt;&lt;set $num2hanzi = $basic_numbers[$num2 - 1] + &#39;个&#39;&gt;&gt;
+&lt;&lt;set $nums_hanzi = [&#39;一&#39;, &#39;二&#39;, &#39;三&#39;, &#39;四&#39;, &#39;五&#39;, &#39;六&#39;, &#39;七&#39;, &#39;八&#39;, &#39;九&#39;, &#39;十&#39;]&gt;&gt;
+&lt;&lt;set $num1hanzi = $nums_hanzi[$num1 - 1] + &#39;个&#39;&gt;&gt;
+&lt;&lt;set $num2hanzi = $nums_hanzi[$num2 - 1] + &#39;个&#39;&gt;&gt;
 &lt;&lt;set $answer = $num1 - $num2&gt;&gt;
-&lt;&lt;set $answerhanzi = $basic_numbers[$answer - 1]&gt;&gt;
+&lt;&lt;set $answerhanzi = $nums_hanzi[$answer - 1]&gt;&gt;
 &lt;&lt;set $answers = []&gt;&gt;
 &lt;&lt;set $experience = 10 + randomInt(5)&gt;&gt;
 &lt;&lt;set $reward = randomInt(4) + 1&gt;&gt;
@@ -443,7 +444,7 @@ $(&#39;&lt;a&gt;Accept&lt;/a&gt;&lt;br /&gt;&#39;).ariaClick(function (event) {
 &lt;&lt;script&gt;&gt;
 window.select_mission_answer = function(soln) {
   const correct_soln = State.variables.answerhanzi;
-  var user_soln = State.variables.basic_numbers[soln - 1];
+  var user_soln = State.variables.nums_hanzi[soln - 1];
   console.log(&quot;User chose answer: &quot; + soln + &quot; (&quot; + user_soln + &quot;)&quot;);
   console.log(&quot;Correct answer: &quot; + correct_soln);
  
@@ -761,6 +762,18 @@ You wake up in the Academy infirmary. The nurse gives you a bland look and says,
 	{hanzi: &#39;马&#39;, pinyin: &#39;mǎ&#39;, strokes: 3, defn: &#39;horse&#39;},
 	{hanzi: &#39;乡&#39;, pinyin: &#39;xiāng&#39;, strokes: 3, defn: &#39;countryside; native place; hometown&#39;},
 	{hanzi: &#39;幺&#39;, pinyin: &#39;yāo&#39;, strokes: 3, defn: &#39;youngest (among siblings); tiny, small; one (spoken only)&#39;},
+	{hanzi: &#39;丰&#39;, pinyin: &#39;fēng&#39;, strokes: 4, defn: &#39;rich, abundant; great; enhance&#39;},
+	{hanzi: &#39;王&#39;, pinyin: &#39;wáng&#39;, strokes: 4, defn: &#39;king, monarch; duke, prince; chieftain; best of its kind; grant, great;&#39;},
+	{hanzi: &#39;井&#39;, pinyin: &#39;jǐng&#39;, strokes: 4, defn: &#39;a well; something shaped like a well; village; neat, orderly;&#39;},
+	{hanzi: &#39;开&#39;, pinyin: &#39;kāi&#39;, strokes: 4, defn: &#39;open; to bloom; thaw out; lift a ban; turn on; depart; to begin; write (e.g. a prescription); reveal; boil;&#39;},
+	{hanzi: &#39;亓&#39;, pinyin: &#39;qí&#39;, strokes: 4, defn: &#39;his, her, its, their, that&#39;},
+	{hanzi: &#39;夫&#39;, pinyin: &#39;fū&#39;, strokes: 4, defn: &#39;husband; man; manual worker; conscripted laborer&#39;},
+	{hanzi: &#39;天&#39;, pinyin: &#39;tiān&#39;, strokes: 4, defn: &#39;sky; heaven; overhead; day; season; weather; nature; innate&#39;},
+	{hanzi: &#39;元&#39;, pinyin: &#39;yuán&#39;, strokes: 4, defn: &#39;element, essential factor; unit, component; first, primary; principal, leading; basic, fundamental; unit of currency;&#39;},
+	{hanzi: &#39;无&#39;, pinyin: &#39;wú&#39;, strokes: 4, defn: &#39;have not, be without; regardless of; not; to lack&#39;},
+	{hanzi: &#39;韦&#39;, pinyin: &#39;wéi&#39;, strokes: 4, defn: &#39;soft leather&#39;},
+	{hanzi: &#39;云&#39;, pinyin: &#39;yún&#39;, strokes: 4, defn: &#39;say, speak; cloud&#39;},
+	{hanzi: &#39;专&#39;, pinyin: &#39;zhuān&#39;, strokes: 4, defn: &#39;specific to; specifically; expert; specialized&#39;},
 	{hanzi: &#39;百&#39;, pinyin: &#39;bǎi&#39;, strokes: 6, defn: &#39;hundred, numerous, all kinds of&#39;},
 	{hanzi: &#39;零&#39;, pinyin: &#39;&#39;, strokes: 13, defn: &#39;zero, fragmentary, odd, fraction, remainder; to wither and fall&#39;},
 ]&gt;&gt;
